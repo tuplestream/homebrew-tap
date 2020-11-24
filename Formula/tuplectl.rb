@@ -10,7 +10,7 @@ class Tuplectl < Formula
     end
 
     def install
-      bin.install "tuplectl"
+      bin.install "tuplectl-darwin-amd64"
     end
 
     test do
