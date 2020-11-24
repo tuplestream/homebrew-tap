@@ -6,7 +6,7 @@ class Tuplectl < Formula
 
     if OS.mac?
       url "https://github.com/tuplestream/tuplectl/releases/download/v0.37.0/tuplectl-darwin-amd64"
-      sha256 "979bf80d17f65823da24b2d42699ae3753c287fea5e78c71a0619db9563c7456"
+      sha256 "93b98f83d01d7c1759cd9befb92797bf066bf685f871fba0541aa263c7244240"
     end
 
     def install
