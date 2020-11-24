@@ -1,7 +1,7 @@
 class Tuplectl < Formula
     desc "Tuplectl CLI Tool"
     homepage "https://docs.tuplestream.com/"
-    version "0.3.0"
+    version "0.4.0"
     bottle :unneeded
 
     if OS.mac?
