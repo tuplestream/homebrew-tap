@@ -11,7 +11,7 @@ class Tuplectl < Formula
 
     def install
       bin.install "tuplectl-darwin-amd64"
-      system "mv #{bin}/tuplectl-darwin-amd64 #{bin}/tuplectl"
+      system "mv", "#{bin}/tuplectl-darwin-amd64", "#{bin}/tuplectl"
     end
 
     test do
