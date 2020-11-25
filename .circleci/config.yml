@@ -1,15 +1,19 @@
 version: 2.1
-orbs:
-  ruby: circleci/ruby@0.1.2 
 
 jobs:
-  build:
+  update_version:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
+      - image: tuplestream/bumpversion:latest
     steps:
       - checkout
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: Update formula details
+          command: |
+            git clone https://github.com/tuplestream/tuplectl -b master
+            VERSION=$(cat ./tuplectl/VERSION)
+            curl -L "https://github.com/tuplestream/tuplectl/releases/download/v$(VERSION)/tuplectl-darwin-amd64.sha256sum" -o checksum
+            CHECKSUM=$(cat checksum)
+            sed -e "s/    version.*/    version \"$VERSION\"/" Formula/tuplectl.rb > tmpFormula
+            sed -E "s/v[0-9]+\.[0-9]+\.[0-9]+/v$VERSION/" tmpFormula > updated
+            sed -e "s/      sha256.*/      sha256 \"$CHECKSUM\"/" updated > Formula/tuplectl.rb
+            cat Formula/tuplectl.rb
