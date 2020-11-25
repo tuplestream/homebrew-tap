@@ -1,12 +1,12 @@
 class Tuplectl < Formula
     desc "Tuplectl CLI Tool"
     homepage "https://docs.tuplestream.com/"
-    version "0.38.0"
+    version "0.39.0"
     bottle :unneeded
 
     if OS.mac?
-      url "https://github.com/tuplestream/tuplectl/releases/download/v0.38.0/tuplectl-darwin-amd64"
-      sha256 "1c02ebb7a86adf862b09df5a92de6eb58e5a78268f46de1e09883d4841f54447"
+      url "https://github.com/tuplestream/tuplectl/releases/download/v0.39.0/tuplectl-darwin-amd64"
+      sha256 "3c3d28ec851d3d9aa025f02c5b8adbaab3f553fbccbd2a60f707d32d6e7c444e"
     end
 
     def install
